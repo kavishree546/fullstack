@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form onsubmit="return validateform()">
+    <label>FUll NAME: </label>
+          <input type="text" id="fullname" name="fullname" required><br><br><br>
+          <span id="nameError" style="color:red"></span>
+          <input type ="submit" value="submit">
+          </form>
+    </body>
+    <script>
+      function validateform()
+      {
+        let name=document.getElementById("fullname").value.trim();
+        let nameerror=document.getElementById("nameError")
+        if(!/^[A-Z]+$/.test(name))
+      {
+        nameerror.textContent="invalid name ! name should be in upper case and not in special case";
+        return false;
+      }
+      return true;
+      }
+    </script>
+</html>
