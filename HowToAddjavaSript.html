@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <style>
+            .box{
+            margin:200px 350px 100px 350px;
+            border:2px solid orange ;
+            padding:50px;
+            background-color:aqua;
+        }
+        .inner-btn-right {
+    
+    text-align: right;   /* change to left if needed */
+
+}
+
+    .result-box {
+        margin-top: 20px;
+        padding: 15px;
+        border: 2px dashed green;
+        background-color: #eaffea;
+        display: none;
+    }
+        </style>
+        
+        <script>
+            function myfun()
+            {
+                let a= Number(document.getElementById("receiver").value);//id must be unique same id for two input is not possible
+                let b= Number(document.getElementById("receiver2").value);
+                 let errorBox = document.getElementById("errorBox");
+if(a==""||b=="")
+{
+ errorBox.style.display = "block";
+        resultBox.style.display = "none";
+        return;
+}
+                let result=document.getElementById("resultBox");
+                let add=document.getElementById("sender");
+               let sum=a+b;
+                add.innerText="Addition value is "+sum;
+                let sub=document.getElementById("sender2");
+                
+                sub.innerHTML="<p style='color:green;'> sub value is "+(a-b) +"</p>";
+                 result.style.display = "block";
+            }
+             function clearResult() {
+        document.getElementById("resultBox").style.display = "none";
+        document.getElementById("result").style.display = "none";//.textContent than it change the content to empty not the style
+        document.getElementById("errorBox").textContent="";
+        document.getElementById("errorBox1").textContent="";
+    }
+</script>
+            </script>
+    </head>
+            <body style="background-color: yellow">
+
+               
+               <center>
+
+                <div class="box">
+                    <button class="inner-btn-right " onclick="alert('button is clicked!')">click me</button>
+               <br>
+               <br>
+                <form>
+                    a:
+                <input type="number" id="receiver" oninput="clearResult()">
+                <br>
+                <br>
+                b:<input type="number" id="receiver2" oninput="clearResult()">
+                <br>
+                <div id="resultBox" class="result-box">
+                <p id="sender"></p>
+                <p id="sender2"></p>
+            </div>
+            <br>
+            <br>
+               <button type="button" onclick="myfun()">add and sub</button>
+               <div id="errorBox" style="color:red; margin-top:10px; display:none;">
+    Please enter both values
+</div>
+               <br>
+               <br>
+                <button type="button" onclick="resulted()">click me</button>
+                <div id="errorBox1" style="color:red; margin-top:10px; display:none;">
+    Please enter both values
+</div>
+                <span id="result"></span>
+               
+                </form>
+            </div>
+                </center>
+               <script>
+              function resulted(){
+                let a= Number(document.getElementById("receiver").value);//id must be unique same id for two input is not possible
+                let b= Number(document.getElementById("receiver2").value);
+                 let errorBox = document.getElementById("errorBox1");
+if(a==""||b=="")
+{
+ errorBox.style.display = "block";
+       v.textContent="none"; 
+        return;
+}
+             let v=document.getElementById("result");
+             v.textContent="result is performed";
+             v.style.color = "blue";          // text color
+v.style.fontSize = "20px";       // font size
+v.style.fontWeight = "bold";     // bold text
+v.style.backgroundColor = "yellow"; // background
+v.style.padding = "5px";         // padding
+v.style.border = "1px solid red";
+               }
+                </script>
+            </body>
+            <script>
+            </script>
+    </html>
