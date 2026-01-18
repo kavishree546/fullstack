@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Mini JavaScript Project</h3>
+
+<p id="auto">This changes on page load</p>
+<p id="click">This changes on button click</p>
+
+<button onclick="changeColor()">Click Me</button>
+
+<script>
+
+document.getElementById("auto").style.color = "green";
+
+function changeColor() {
+    document.getElementById("click").style.color = "red";
+}
+</script>
+
+</body>
+</html>
