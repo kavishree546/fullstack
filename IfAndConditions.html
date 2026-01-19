@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  button { margin-top: 10px; }
+</style>
+</head>
+
+<body>
+
+<h3>Number Counter</h3>
+
+<input type="text" id="nums" placeholder="Ex: 1,-2,0,5,7">
+<br>
+<button onclick="countNums()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function isPrime(n) {
+    if (n <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+function countNums() {
+    let arr = document.getElementById("nums").value.split(",");
+    let pos = 0, neg = 0, zero = 0;
+    let prime = 0, even = 0, odd = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let n = Number(arr[i]);
+
+        if (n > 0) pos++;
+        else if (n < 0) neg++;
+        else zero++;
+
+        if (n % 2 == 0 && n != 0) even++;
+        else if (n % 2 != 0) odd++;
+
+        if (isPrime(n)) prime++;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Positive: " + pos + "<br>" +
+        "Negative: " + neg + "<br>" +
+        "Zero: " + zero + "<br>" +
+        "Even: " + even + "<br>" +
+        "Odd: " + odd + "<br>" +
+        "Prime: " + prime;
+}
+</script>
+
+</body>
+</html>
